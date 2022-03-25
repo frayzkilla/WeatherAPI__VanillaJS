@@ -139,3 +139,16 @@ html {
     text-shadow: 1px 1px 4px rgba(150, 151, 150, 1);
     font-weight: bold;
 }
+
+.detail__value {
+    font-weight: lighter;
+}
+
+.detail__first, .detail__second {
+    display: flex;
+    flex-direction: row;
+}
+
+.detail__value {
+    margin-left: 1.5vh;
+}

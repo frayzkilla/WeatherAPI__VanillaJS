@@ -87,7 +87,7 @@ function success(pos) {
                 document.getElementById('temp2').innerHTML = Math.round(xhr.response.list[nextHourIndex].main.temp - 273.15);
                 icon_URL =  'http://openweathermap.org/img/wn/'+xhr.response.list[nextHourIndex].weather[0].icon+'@2x.png'; */
 
-                document.getElementById('time2').innerHTML = nextHour;
+                document.getElementById('time2').innerHTML = nextHour  % 24;
                 document.getElementById('temp2').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15) + '°';
                 icon_URL =  'http://openweathermap.org/img/wn/'+xhr_name.response.hourly[nextHourIndex].weather[0].icon+'@2x.png';
                 icon_URL = "url('"+icon_URL+"')";
