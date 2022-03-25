@@ -49,7 +49,7 @@ function success(pos) {
                 document.getElementById('preload').classList.add('hide');
                 console.log(xhr.response);
                 document.getElementById('maincity').innerHTML = xhr.response.city.name;
-                document.getElementById('maintemp').innerHTML = Math.round(xhr_name.response.current.temp - 273.15);
+                document.getElementById('maintemp').innerHTML = Math.round(xhr_name.response.current.temp - 273.15)  + '°';
                 document.getElementById('maindesc').innerHTML = xhr_name.response.current.weather[0].main;
                 let icon_URL =  'http://openweathermap.org/img/wn/'+xhr_name.response.current.weather[0].icon+'@2x.png';
                 icon_URL = "url('"+icon_URL+"')";
@@ -81,14 +81,14 @@ function success(pos) {
                 nextHour = parseInt(nowHour) + 2;
                 nextHourIndex = 1;
 
-                document.getElementById('temp1').innerHTML = Math.round(xhr_name.response.current.temp - 273.15);;
+                document.getElementById('temp1').innerHTML = Math.round(xhr_name.response.current.temp - 273.15) + '°';
                 
                 /* document.getElementById('time2').innerHTML = xhr.response.list[nextHourIndex].dt_txt.slice(11,13);
                 document.getElementById('temp2').innerHTML = Math.round(xhr.response.list[nextHourIndex].main.temp - 273.15);
                 icon_URL =  'http://openweathermap.org/img/wn/'+xhr.response.list[nextHourIndex].weather[0].icon+'@2x.png'; */
 
                 document.getElementById('time2').innerHTML = nextHour;
-                document.getElementById('temp2').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15);
+                document.getElementById('temp2').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15) + '°';
                 icon_URL =  'http://openweathermap.org/img/wn/'+xhr_name.response.hourly[nextHourIndex].weather[0].icon+'@2x.png';
                 icon_URL = "url('"+icon_URL+"')";
                 document.getElementById('icon2').style.backgroundImage = icon_URL;
@@ -96,30 +96,30 @@ function success(pos) {
                 
 
                 document.getElementById('time3').innerHTML = (nextHour + 3) % 24;
-                document.getElementById('temp3').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15);
+                document.getElementById('temp3').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15) + '°';
                 icon_URL =  'http://openweathermap.org/img/wn/'+xhr_name.response.hourly[nextHourIndex].weather[0].icon+'@2x.png';
                 icon_URL = "url('"+icon_URL+"')";
                 document.getElementById('icon3').style.backgroundImage = icon_URL;
                 nextHourIndex += 3;
 
                 document.getElementById('time4').innerHTML = (nextHour + 6) % 24;
-                document.getElementById('temp4').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15);
+                document.getElementById('temp4').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15) + '°';
                 icon_URL =  'http://openweathermap.org/img/wn/'+xhr_name.response.hourly[nextHourIndex].weather[0].icon+'@2x.png';
                 icon_URL = "url('"+icon_URL+"')";
                 document.getElementById('icon4').style.backgroundImage = icon_URL;
                 nextHourIndex += 3;
 
                 document.getElementById('time5').innerHTML = (nextHour + 9) % 24;
-                document.getElementById('temp5').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15);
+                document.getElementById('temp5').innerHTML = Math.round(xhr_name.response.hourly[nextHourIndex].temp - 273.15) + '°';
                 icon_URL =  'http://openweathermap.org/img/wn/'+xhr_name.response.hourly[nextHourIndex].weather[0].icon+'@2x.png';
                 icon_URL = "url('"+icon_URL+"')";
                 document.getElementById('icon5').style.backgroundImage = icon_URL;
                 nextHourIndex += 3;
 
-                document.getElementById('feels_like').innerHTML = Math.round(xhr_name.response.current.feels_like - 273.15);
-                document.getElementById('pressure').innerHTML = Math.round(xhr_name.response.current.pressure / 1.333);
+                document.getElementById('feels_like').innerHTML = Math.round(xhr_name.response.current.feels_like - 273.15) + '°';
+                document.getElementById('pressure').innerHTML = Math.round(xhr_name.response.current.pressure / 1.333) + ' mm of merc.';
                 document.getElementById('humidity').innerHTML = Math.round(xhr_name.response.current.humidity) + '%';
-                document.getElementById('wind').innerHTML = Math.round(xhr_name.response.current.wind_speed) + ' м/с';
+                document.getElementById('wind').innerHTML = Math.round(xhr_name.response.current.wind_speed) + ' m/s';
 
 
                 if(xhr_name.response.current.weather[0].icon.slice(-1) == 'n'){

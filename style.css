@@ -133,3 +133,9 @@ html {
 .hide {
     display: none;
 }
+
+.detail__name, .detail__value {
+    font-size: 1em;
+    text-shadow: 1px 1px 4px rgba(150, 151, 150, 1);
+    font-weight: bold;
+}
