@@ -44,7 +44,9 @@ function success(pos) {
 
 
             xhr.onload = () => {
-
+                
+                document.getElementById('mainwrap').classList.remove('blur');
+                document.getElementById('preload').classList.add('hide');
                 console.log(xhr.response);
                 document.getElementById('maincity').innerHTML = xhr.response.city.name;
                 document.getElementById('maintemp').innerHTML = Math.round(xhr_name.response.current.temp - 273.15);
